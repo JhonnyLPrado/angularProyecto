@@ -10,9 +10,11 @@ export class EditorFiltroComponent {
   brillo= signal(100);
   contraste = signal(100);
   blur = signal(0);
+  color = signal(100);
+  ruido = signal(100);
 
   filtroScss = computed(()=>{
-    return `brightness(${this.brillo()}%) contrast(${this.contraste()}%) blur(${this.blur()}px)`;
+    return `brightness(${this.brillo()}%) contrast(${this.contraste()}%) blur(${this.blur()}px) sepia(${this.color()}%) saturate(${this.ruido()}%) hue-rotate(${this.color()}deg)`;
   })
 
   actualizar (prop: string, evento: Event){
@@ -20,5 +22,7 @@ export class EditorFiltroComponent {
     if (prop === 'brillo') this.brillo.set(+valor);
     if (prop === 'contraste') this.contraste.set(+valor);
     if (prop === 'blur') this.blur.set(+valor);
+    if (prop === 'color') this.color.set(+valor);
+    if (prop === 'ruido') this.ruido.set(+valor);
   }
 }

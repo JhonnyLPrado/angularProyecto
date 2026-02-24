@@ -8,6 +8,10 @@
       <input type="range" min="0" max="200" (input)="actualizar('contraste', $event)">
       <label> Pixel : {{blur()}}</label>
       <input type="range" min="0" max="20" (input)="actualizar('blur', $event)">
+      <label> color : {{color()}}</label>
+      <input type="range" min="0" max="100" (input)="actualizar('color', $event)">
+      <label> Saturación : {{ruido()}}</label>
+      <input type="range" min="0" max="100" (input)="actualizar('ruido', $event)">
     </div>
   </div>
 </div>
